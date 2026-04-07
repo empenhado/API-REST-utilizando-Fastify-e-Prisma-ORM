@@ -1,0 +1,35 @@
+{
+  "name": "av1",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000A\u0000P\u0000I\u0000-\u0000R\u0000E\u0000S\u0000T\u0000-\u0000u\u0000t\u0000i\u0000l\u0000i\u0000z\u0000a\u0000n\u0000d\u0000o\u0000-\u0000F\u0000a\u0000s\u0000t\u0000i\u0000f\u0000y\u0000-\u0000e\u0000-\u0000P\u0000r\u0000i\u0000s\u0000m\u0000a\u0000-\u0000O\u0000R\u0000M\u0000\r\u0000 \u0000#\u0000 \u0000t\u0000e\u0000s\u0000t\u0000e\u0000",
+  "keywords": [],
+  "homepage": "https://github.com/empenhado/API-REST-utilizando-Fastify-e-Prisma-ORM#readme",
+  "bugs": {
+    "url": "https://github.com/empenhado/API-REST-utilizando-Fastify-e-Prisma-ORM/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/empenhado/API-REST-utilizando-Fastify-e-Prisma-ORM.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx --watch src/main.ts"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "^7.7.0",
+    "@prisma/client": "^7.7.0",
+    "dotenv": "^17.4.1",
+    "fastify": "^5.8.4",
+    "pg": "^8.20.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.5.2",
+    "@types/pg": "^8.20.0",
+    "prisma": "^7.7.0",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.2"
+  }
+}
