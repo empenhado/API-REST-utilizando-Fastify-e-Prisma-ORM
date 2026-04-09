@@ -8,7 +8,9 @@ datasource db {
   provider = "postgresql"
 }
 
+///Cadastrando um usuário no sistema 
 model Cliente {
+  /// ID do pedido (UUID pra gerar automaticamente)
   idCliente String   @id @default(uuid())
   nome      String
   email     String 
@@ -17,7 +19,9 @@ model Cliente {
   @@map("cliente")
 }
 
+///Cadastrando um produto no sistema
 model Produto {
+  /// ID do produto (UUID pra gerar automaticamente)
   idProduto String    @id @default(uuid())
   nome      String
   preco     Float
@@ -26,9 +30,12 @@ model Produto {
   @@map("produto") 
 }
 
+///Cadastrando um pedido no sistema
 model Pedido {
+  /// ID do pedido (UUID pra gerar automaticamente)
   idPedido  String     @id @default(uuid())
   clienteId String
+  /// Relacionar ao cliente dono do pedido
   cliente   Cliente    @relation(fields: [clienteId], references: [idCliente])
   produtos  Produto[]  
   valorTotal Float
