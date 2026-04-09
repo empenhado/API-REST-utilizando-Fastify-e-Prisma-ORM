@@ -1,7 +1,9 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import { prisma } from "../lib/prisma";
 
+/**Registra as rotas relacionadas ao Produto no servidor Fastify*/
 export async function produtoRoutes(app: FastifyInstance) {
+  /**Utilizando método GET/ para listar todos os produtos cadastrados*/
   app.get("/", async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const produtos = await prisma.produto.findMany();
@@ -11,6 +13,7 @@ export async function produtoRoutes(app: FastifyInstance) {
     }
   });
 
+  /**Utilizando método GET/:id para listar um produto específico por ID */
   app.get("/:id", async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const { id } = request.params as { id: string };
@@ -22,6 +25,7 @@ export async function produtoRoutes(app: FastifyInstance) {
     }
   });
 
+  /** Método POST para criar um novo produto no banco de dados */
   app.post("/", async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const { nome, preco } = request.body as { nome: string; preco: number };
