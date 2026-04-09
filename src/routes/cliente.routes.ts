@@ -1,7 +1,9 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
 import { prisma } from "../lib/prisma";
 
+  ///Registra as rotas relacionadas ao recurso Cliente no servidor Fastify
 export async function clienteRoutes(app: FastifyInstance) {
+  ///Utilizando método GET/ para listar todos os clientes cadastrados
   app.get("/", async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const clientes = await prisma.cliente.findMany();
@@ -11,6 +13,7 @@ export async function clienteRoutes(app: FastifyInstance) {
     }
   });
 
+    ///Utilizando método GET/:id para listar um cliente específico por ID 
   app.get("/:id", async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const { id } = request.params as { id: string };
@@ -22,6 +25,7 @@ export async function clienteRoutes(app: FastifyInstance) {
     }
   });
 
+  ///Método POST para criar um novo cliente no banco de dados
   app.post("/", async (request: FastifyRequest, reply: FastifyReply) => {
     try {
       const { nome, email } = request.body as { nome: string; email: string };
